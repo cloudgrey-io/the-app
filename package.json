@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle-ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
+    "bundle-android-debug": "cd android && ./gradlew bundleDebugJsAndAssets",
+    "build-android-debug": "cd android && ./gradlew bundleDebugJsAndAssets assembleDebug",
     "test": "jest"
   },
   "dependencies": {

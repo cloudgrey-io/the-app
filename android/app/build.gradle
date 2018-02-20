@@ -73,7 +73,13 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+    entryFile: "index.js",
+    bundleAssetName: "index.bundle",
+    bundleInDebug: true,
+    bundleInRelease: true,
+    root: "../../",
+    jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+    jsBundleDirRelease: "$buildDir/intermediates/assets/release",
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -98,7 +104,7 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "com.theapp"
+        applicationId "io.cloudgrey.theapp"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
