@@ -1,4 +1,12 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import { Navigation } from 'react-native-navigation';
+import { registerScreens } from './screens';
 
-AppRegistry.registerComponent('TheApp', () => App);
+registerScreens();
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'io.cloudgrey.HomeScreen',
+    title: 'The App',
+  }
+});
+

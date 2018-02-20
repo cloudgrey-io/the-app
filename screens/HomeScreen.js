@@ -1,36 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import {
-  Header,
   List,
   ListItem,
 } from 'react-native-elements';
 
 const viewList = [
-  {name: "Echo Box", desc: "Write something and save to local memory"},
+  {
+    name: "Echo Box",
+    desc: "Write something and save to local memory",
+    screen: "Echo",
+  },
 ];
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class HomeScreen extends Component<Props> {
   render() {
+    const {navigator} = this.props;
     return (
       <View>
-        <Header backgroundColor="#000" centerComponent={{text: "The App", style: styles.header}}/>
         <Text style={styles.listHeader}>Choose An Awesome View</Text>
         <List>
           {viewList.map((l, i) => (
-            <ListItem key={i} title={l.name} subtitle={l.desc} />
+            <ListItem key={i} title={l.name} subtitle={l.desc} onPress={() => navigator.push({screen: `io.cloudgrey.${l.screen}Screen`})} />
           ))}
         </List>
       </View>
@@ -39,13 +35,9 @@ export default class App extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 20,
-    color: '#fff'
-  },
   listHeader: {
     padding: 8,
-    fontSize: 16,
+    fontSize: 14,
     marginBottom: -20,
   },
 });
