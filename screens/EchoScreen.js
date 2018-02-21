@@ -40,7 +40,7 @@ export default class EchoScreen extends Component {
         {savedEcho &&
           <View style={{...baseStyles.flexCenter}}>
             <Text style={styles.echoHeader}>Here's what you said before:</Text>
-            <Text style={styles.savedEcho} {...testProps('savedMessage')}>{savedEcho}</Text>
+            <Text style={styles.savedEcho} testID="savedMessage" accessibilityLabel={savedEcho}>{savedEcho}</Text>
           </View>
         }
         <View style={styles.form}>
