@@ -1354,6 +1354,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cloudgrey.the-app";
 				PRODUCT_NAME = TheApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1375,6 +1376,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cloudgrey.the-app";
 				PRODUCT_NAME = TheApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

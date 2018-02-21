@@ -4,7 +4,7 @@ import { Input, Button } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps } from '../lib/utils';
 
-const ECHO_KEY = "@TheApp:savedEcho";
+const ECHO_KEY = "@TheApp:savedAwesomeText";
 
 export default class EchoScreen extends Component {
 
