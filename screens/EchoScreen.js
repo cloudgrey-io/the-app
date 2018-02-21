@@ -5,6 +5,7 @@ import baseStyles from '../styles/base';
 import { testProps } from '../lib/utils';
 
 const ECHO_KEY = "@TheApp:savedAwesomeText";
+const OLD_ECHO_KEY = "@TheApp:savedEcho";
 
 export default class EchoScreen extends Component {
 
@@ -28,7 +29,15 @@ export default class EchoScreen extends Component {
   }
 
   async setEcho() {
-    const savedEcho = await AsyncStorage.getItem(ECHO_KEY);
+    let savedEcho = await AsyncStorage.getItem(ECHO_KEY);
+    // do a key migration if the user had the old version and is upgrading
+    if (!savedEcho) {
+      const oldSavedEcho = await AsyncStorage.getItem(OLD_ECHO_KEY);
+      if (oldSavedEcho) {
+        savedEcho = oldSavedEcho;
+        await AsyncStorage.setItem(ECHO_KEY, savedEcho);
+      }
+    }
     this.setState({savedEcho});
   }
 
