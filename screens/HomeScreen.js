@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import {
-  List,
-  ListItem,
-} from 'react-native-elements';
+import { StyleSheet, Text, View, } from 'react-native';
+import { List, ListItem, } from 'react-native-elements';
+import { testProps } from '../lib/utils';
 
 const viewList = [
   {
@@ -26,7 +20,13 @@ export default class HomeScreen extends Component<Props> {
         <Text style={styles.listHeader}>Choose An Awesome View</Text>
         <List>
           {viewList.map((l, i) => (
-            <ListItem key={i} title={l.name} subtitle={l.desc} onPress={() => navigator.push({screen: `io.cloudgrey.${l.screen}Screen`})} />
+            <ListItem
+              key={i}
+              title={l.name}
+              subtitle={l.desc}
+              onPress={() => navigator.push({screen: `io.cloudgrey.${l.screen}Screen`})}
+              {...testProps(l.name)}
+            />
           ))}
         </List>
       </View>

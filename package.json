@@ -7,6 +7,7 @@
     "bundle-ios": "react-native bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle",
     "build-ios": "npm run bundle-ios && xcodebuild  -project ios/TheApp.xcodeproj -scheme TheApp -sdk iphonesimulator -destination platform='iOS Simulator',name='iPhone 7' -derivedDataPath ios/build",
     "build-android": "cd android && ./gradlew assembleDebug",
+    "show-ios-debug": "echo \"$(pwd)/ios/build/Build/Products/Debug-iphonesimulator/TheApp.app\"",
     "test": "jest"
   },
   "dependencies": {

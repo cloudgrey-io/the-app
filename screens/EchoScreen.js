@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, AsyncStorage } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import baseStyles from '../styles/base';
+import { testProps } from '../lib/utils';
 
 const ECHO_KEY = "@TheApp:savedEcho";
 
@@ -39,7 +40,7 @@ export default class EchoScreen extends Component {
         {savedEcho &&
           <View style={{...baseStyles.flexCenter}}>
             <Text style={styles.echoHeader}>Here's what you said before:</Text>
-            <Text style={styles.savedEcho}>{savedEcho}</Text>
+            <Text style={styles.savedEcho} {...testProps('savedMessage')}>{savedEcho}</Text>
           </View>
         }
         <View style={styles.form}>
@@ -47,10 +48,12 @@ export default class EchoScreen extends Component {
             placeholder={placeholder}
             style={styles.formControl}
             onChangeText={(text) => this.setState({curText: text})}
+            {...testProps('messageInput')}
           />
           <Button
             text="Save" style={styles.formControl}
             onPress={this.saveEcho.bind(this)}
+            {...testProps('messageSaveBtn')}
           />
         </View>
       </View>
