@@ -104,11 +104,11 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "io.cloudgrey.theapp"
+        applicationId "io.cloudgrey.the-app"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
