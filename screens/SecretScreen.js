@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, AsyncStorage } from 'react-native';
 import { Input, Button, Text } from 'react-native-elements';
 import baseStyles from '../styles/base';
-import { testProps } from '../lib/utils';
-import { USER_KEY } from './LoginScreen';
+import { testProps, getLoginUser, logout } from '../lib/utils';
 
 export default class SecretScreen extends Component {
   constructor() {
@@ -15,7 +14,7 @@ export default class SecretScreen extends Component {
   }
 
   async componentWillMount() {
-    const user = await AsyncStorage.getItem(USER_KEY);
+    const user = await getLoginUser();
     if (!user) {
       this.props.navigator.push({screen: 'io.cloudgrey.LoginScreen'});
     }
@@ -27,7 +26,7 @@ export default class SecretScreen extends Component {
 
   async logout() {
     const {navigator} = this.props;
-    await AsyncStorage.setItem(USER_KEY, "");
+    await logout();
     navigator.push({screen: 'io.cloudgrey.LoginScreen'});
   }
 

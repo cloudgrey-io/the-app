@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, AsyncStorage } from 'react-native';
 import { Input, Button, Text } from 'react-native-elements';
 import baseStyles from '../styles/base';
-import { testProps } from '../lib/utils';
-
-const VALID_LOGINS = [
-  ["alice", "mypassword"],
-  ["bob", "totallysecure"],
-];
-
-export const USER_KEY = "@TheApp:LoggedInUser";
+import { testProps, USER_KEY, login } from '../lib/utils';
 
 export default class LoginScreen extends Component {
   constructor() {
@@ -31,15 +24,9 @@ export default class LoginScreen extends Component {
 
   async login() {
     const {navigator} = this.props;
-    const isValid = VALID_LOGINS.filter(l => {
-      return l[0] === this.state.username &&
-             l[1] === this.state.password;
-    }).length === 1;
-
-    if (isValid) {
-      await AsyncStorage.setItem(USER_KEY, this.state.username);
-      navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+    if (await login(this.state.username, this.state.password)) {
       this.setState({username: "", password: ""});
+      navigator.push({screen: 'io.cloudgrey.SecretScreen'});
       return;
     }
 
