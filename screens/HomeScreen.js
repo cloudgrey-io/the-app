@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { Platform, StyleSheet, Text, View, Linking } from 'react-native';
 import { List, ListItem, } from 'react-native-elements';
-import { testProps } from '../lib/utils';
+import { testProps, login } from '../lib/utils';
 
 const viewList = [
   {
@@ -16,8 +16,32 @@ const viewList = [
   }
 ];
 
-type Props = {};
-export default class HomeScreen extends Component<Props> {
+export default class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    if (Platform.OS === "Android") {
+    } else {
+      Linking.addEventListener('url', this.handleOpenUrl.bind(this));
+    }
+  }
+
+  async handleOpenUrl(event) {
+    const {url} = event;
+    const route = url.replace(/.*?:\/\//g, '');
+    const [handler, ...parts] = route.split('/');
+    if (handler === "login") {
+      const loggedIn = await login(parts[0], parts[1]);
+      if (loggedIn) {
+        this.props.navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+      } else {
+        this.props.navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+      }
+    }
+  }
+
   render() {
     const {navigator} = this.props;
     return (
