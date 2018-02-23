@@ -41,15 +41,19 @@ export default class LoginScreen extends Component {
         onChangeText={(username) => this.setState({username})}
         autoCapitalize="none"
         value={username}
+        {...testProps('username')}
       />
       <Input placeholder="Password" style={styles.formEl}
         onChangeText={(password) => this.setState({password})}
         autoCapitalize="none"
         secureTextEntry={true}
         value={password}
+        {...testProps('password')}
       />
       <Button text="Login" style={styles.button}
-        onPress={this.login} />
+        onPress={this.login}
+        {...testProps('loginBtn')}
+      />
     </View>;
   }
 }

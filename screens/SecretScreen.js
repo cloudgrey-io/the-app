@@ -34,7 +34,7 @@ export default class SecretScreen extends Component {
     const {user} = this.state;
     return <View style={styles.view}>
       <Text h2>Secret Area</Text>
-      <Text style={styles.message}>You are logged in as <Text style={styles.username}>{user}</Text></Text>
+      <Text style={styles.message}>You are logged in as <Text style={styles.username} {...testProps(`Logged in as ${user}`)}>{user}</Text></Text>
       <Button text="Logout" style={styles.button}
         onPress={this.logout} />
     </View>;
