@@ -72,15 +72,21 @@ import com.android.build.OutputFile
  * ]
  */
 
-project.ext.react = [
-    entryFile: "index.js",
-    bundleAssetName: "index.android.bundle",
-    bundleInDebug: true,
-    bundleInRelease: true,
-    root: "../../",
-    jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
-    jsBundleDirRelease: "$buildDir/intermediates/assets/release",
-]
+def bundleInDebug = "$System.env.BUNDLE"
+
+if (bundleInDebug == "1") {
+    project.ext.react = [
+            entryFile: "index.js",
+            bundleAssetName: "index.android.bundle",
+            bundleInDebug: true,
+            bundleInRelease: true,
+            root: "../../",
+            jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+            jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+    ]
+} else {
+    project.ext.react = []
+}
 
 apply from: "../../node_modules/react-native/react.gradle"
 
@@ -108,7 +114,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.2.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

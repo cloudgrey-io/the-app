@@ -19,13 +19,21 @@ const viewList = [
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
+    this.handleOpenUrl = this.handleOpenUrl.bind(this);
   }
 
   componentDidMount() {
     if (Platform.OS === "Android") {
+      Linking.getInitialURL().then(url => {
+        this.handleOpenUrl({url});
+      });
     } else {
-      Linking.addEventListener('url', this.handleOpenUrl.bind(this));
+      Linking.addEventListener('url', this.handleOpenUrl);
     }
+  }
+
+  componentWillUnmount() {
+    Linking.removeEventListener('url', this.handleOpenUrl);
   }
 
   async handleOpenUrl(event) {
