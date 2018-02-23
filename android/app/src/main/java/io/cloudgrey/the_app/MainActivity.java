@@ -1,4 +1,4 @@
-package com.theapp;
+package io.cloudgrey.the_app;
 
 import com.reactnativenavigation.controllers.SplashActivity;
 

@@ -1,6 +1,7 @@
-package com.theapp;
+package io.cloudgrey.the_app;
 
 import com.facebook.react.ReactPackage;
+import com.reactnativenavigation.BuildConfig;
 import com.reactnativenavigation.NavigationApplication;
 
 import java.util.Arrays;
