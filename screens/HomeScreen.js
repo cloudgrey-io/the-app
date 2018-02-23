@@ -9,6 +9,11 @@ const viewList = [
     desc: "Write something and save to local memory",
     screen: "Echo",
   },
+  {
+    name: "Login Screen",
+    desc: "A fake login screen for testing",
+    screen: "Login",
+  }
 ];
 
 type Props = {};
