@@ -75,7 +75,7 @@ import com.android.build.OutputFile
 project.ext.react = [
     entryFile: "index.js",
     bundleAssetName: "index.android.bundle",
-    bundleInDebug: true,
+    bundleInDebug: false,
     bundleInRelease: true,
     root: "../../",
     jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
@@ -104,7 +104,7 @@ android {
     buildToolsVersion "25.0.1"
 
     defaultConfig {
-        applicationId "io.cloudgrey.theapp"
+        applicationId "io.cloudgrey.the_app"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
