@@ -49,8 +49,8 @@ export default class VerifySMSScreen extends Component {
     const {verified} = this.state;
     return (
       <View style={styles.main}>
-        {verified && <Text style={styles.message}>You've been verified!</Text>}
-        {!verified && <Text style={styles.message}>Waiting to receive a verification text message with the correct code. (HINT: it's {CODE})</Text>}
+        {verified && <Text style={styles.message} {...testProps('verified')}>You've been verified!</Text>}
+        {!verified && <Text style={styles.message} {...testProps('waiting')}>Waiting to receive a verification text message with the correct code. (HINT: it's {CODE})</Text>}
       </View>
     );
   }

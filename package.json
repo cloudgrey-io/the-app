@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "build-ios-release": "react-native run-ios --configuration Release",
     "build-android": "cd android && ./gradlew assembleDebug",
+    "build-android-release": "cd android && ./gradlew clean assemble && ./sign-android-release-apk.sh",
     "show-ios-debug": "echo \"$(pwd)/ios/build/Build/Products/Debug-iphonesimulator/TheApp.app\"",
     "show-ios-release": "echo \"$(pwd)/ios/build/Build/Products/Release-iphonesimulator/TheApp.app\"",
     "test": "jest"

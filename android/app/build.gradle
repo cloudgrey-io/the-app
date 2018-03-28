@@ -85,7 +85,15 @@ if (bundleInDebug == "1") {
             jsBundleDirRelease: "$buildDir/intermediates/assets/release",
     ]
 } else {
-    project.ext.react = []
+    project.ext.react = [
+        entryFile: "index.js",
+        bundleAssetName: "index.android.bundle",
+        bundleInDebug: false,
+        bundleInRelease: true,
+        root: "../../",
+        jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+        jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+    ]
 }
 
 apply from: "../../node_modules/react-native/react.gradle"
