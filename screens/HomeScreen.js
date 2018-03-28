@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View, Linking } from 'react-native';
 import { List, ListItem, } from 'react-native-elements';
 import { testProps, login } from '../lib/utils';
 
-const viewList = [
+let viewList = [
   {
     name: "Echo Box",
     desc: "Write something and save to local memory",
@@ -13,8 +13,16 @@ const viewList = [
     name: "Login Screen",
     desc: "A fake login screen for testing",
     screen: "Login",
-  }
+  },
 ];
+
+if (Platform.OS === 'android') {
+  viewList.push({
+    name: "Verify Phone Number",
+    desc: "A fake SMS auto-verification screen",
+    screen: "VerifySMS",
+  });
+};
 
 export default class HomeScreen extends Component {
   constructor(props) {
