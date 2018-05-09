@@ -94,5 +94,7 @@ const styles = StyleSheet.create({
   },
   formControl: {
     margin: baseStyles.margin,
+    width: '100%',
+    height: 25,
   },
 });

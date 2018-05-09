@@ -14,6 +14,11 @@ let viewList = [
     desc: "A fake login screen for testing",
     screen: "Login",
   },
+  {
+    name: "Clipboard Demo",
+    desc: "Mess around with the clipboard",
+    screen: "Clipboard",
+  },
 ];
 
 if (Platform.OS === 'android') {
