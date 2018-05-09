@@ -31,7 +31,7 @@ export default class ClipboardScreen extends Component {
       <View style={styles.main}>
         <View style={{...baseStyles.flexCenter}}>
           <Text style={styles.echoHeader}>Here's the clipboard text:</Text>
-          <Text style={styles.savedEcho} {...testProps('clipboardText')}>{clipboardText}</Text>
+          <Text style={styles.savedEcho} testId="clipboardText" accessibilityLabel={clipboardText}>{clipboardText}</Text>
           <Button {...testProps('refreshClipboardText')} text="Refresh Clipboard Text"
             onPress={this.refresh.bind(this)}
           />
