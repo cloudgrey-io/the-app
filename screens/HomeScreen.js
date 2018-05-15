@@ -27,7 +27,7 @@ if (Platform.OS === 'android') {
     desc: "A fake SMS auto-verification screen",
     screen: "VerifySMS",
   });
-};
+}
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -35,11 +35,10 @@ export default class HomeScreen extends Component {
     this.handleOpenUrl = this.handleOpenUrl.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     if (Platform.OS === "Android") {
-      Linking.getInitialURL().then(url => {
-        this.handleOpenUrl({url});
-      });
+      const url = await Linking.getInitialURL();
+      this.handleOpenUrl({url});
     } else {
       Linking.addEventListener('url', this.handleOpenUrl);
     }

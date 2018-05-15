@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
-import { PermissionsAndroid, View, StyleSheet, Text, AsyncStorage } from 'react-native';
-import { Input, Button } from 'react-native-elements';
-import baseStyles from '../styles/base';
+import { PermissionsAndroid, View, StyleSheet, Text } from 'react-native';
 import { testProps } from '../lib/utils';
 import SMSListener from 'react-native-android-sms-listener';
 
 const CODE = "123456";
 
 async function requestReadSmsPermission() {
-  const granted = await PermissionsAndroid.request(
+  await PermissionsAndroid.request(
     PermissionsAndroid.PERMISSIONS.READ_SMS,
     {
       title: "SMS Read Verification",
       message: "We need access to read SMS to verify your authorization"
     }
   );
-  if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-    console.log("sms read permissions granted", granted);
-  } else {
-    console.log("sms read permissions denied", denied);
-  }
 }
 export default class VerifySMSScreen extends Component {
 
@@ -30,7 +23,7 @@ export default class VerifySMSScreen extends Component {
   }
 
   componentDidMount() {
-    requestReadSmsPermission().catch(console.warn);
+    requestReadSmsPermission().catch(console.warn); // eslint-disable-line no-console
     this.smsListener = SMSListener.addListener(message => {
       if (new RegExp(CODE).test(message.body)) {
         this.setState({verified: true});
@@ -49,8 +42,8 @@ export default class VerifySMSScreen extends Component {
     const {verified} = this.state;
     return (
       <View style={styles.main}>
-        {verified && <Text style={styles.message} {...testProps('verified')}>You've been verified!</Text>}
-        {!verified && <Text style={styles.message} {...testProps('waiting')}>Waiting to receive a verification text message with the correct code. (HINT: it's {CODE})</Text>}
+        {verified && <Text style={styles.message} {...testProps('verified')}>You&apos;ve been verified!</Text>}
+        {!verified && <Text style={styles.message} {...testProps('waiting')}>Waiting to receive a verification text message with the correct code. (HINT: it&apos;s {CODE})</Text>}
       </View>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, AsyncStorage } from 'react-native';
-import { Input, Button, Text } from 'react-native-elements';
+import { View, StyleSheet } from 'react-native';
+import { Button, Text } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps, getLoginUser, logout } from '../lib/utils';
 
@@ -13,7 +13,7 @@ export default class SecretScreen extends Component {
     this.logout = this.logout.bind(this);
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const user = await getLoginUser();
     if (!user) {
       this.props.navigator.push({screen: 'io.cloudgrey.LoginScreen'});

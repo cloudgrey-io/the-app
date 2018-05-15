@@ -1,3 +1,5 @@
+/* global alert */
+
 import React, { Component } from 'react';
 import { View, StyleSheet, AsyncStorage } from 'react-native';
 import { Input, Button, Text } from 'react-native-elements';
@@ -14,7 +16,7 @@ export default class LoginScreen extends Component {
     this.login = this.login.bind(this);
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const {navigator} = this.props;
     // if we're already logged in, just go to the secret area already
     if (await AsyncStorage.getItem(USER_KEY)) {

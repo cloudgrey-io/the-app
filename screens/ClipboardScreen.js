@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Clipboard, View, StyleSheet, Text, AsyncStorage } from 'react-native';
+import { Clipboard, View, StyleSheet, Text } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps } from '../lib/utils';
@@ -30,7 +30,7 @@ export default class ClipboardScreen extends Component {
     return (
       <View style={styles.main}>
         <View style={{...baseStyles.flexCenter}}>
-          <Text style={styles.echoHeader}>Here's the clipboard text:</Text>
+          <Text style={styles.echoHeader}>Here&apos;s the clipboard text:</Text>
           <Text style={styles.savedEcho} testId="clipboardText" accessibilityLabel={clipboardText}>{clipboardText}</Text>
           <Button {...testProps('refreshClipboardText')} text="Refresh Clipboard Text"
             onPress={this.refresh.bind(this)}

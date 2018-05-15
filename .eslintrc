@@ -1,6 +1,10 @@
 {
-    "extends": "appium",
+    "extends": [
+        "plugin:react/recommended",
+        "appium"
+    ],
     "rules": {
-        "space-before-function-paren": "false"
+        "space-before-function-paren": 0,
+        "react/prop-types": 0
     }
 }
