@@ -1,0 +1,6 @@
+{
+    "extends": "appium",
+    "rules": {
+        "space-before-function-paren": "false"
+    }
+}
