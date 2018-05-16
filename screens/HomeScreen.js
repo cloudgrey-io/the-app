@@ -19,6 +19,11 @@ let viewList = [
     desc: "Mess around with the clipboard",
     screen: "Clipboard",
   },
+  {
+    name: "Webview Demo",
+    desc: "Explore the possibilities of hybrid apps",
+    screen: "Hybrid",
+  },
 ];
 
 if (Platform.OS === 'android') {
