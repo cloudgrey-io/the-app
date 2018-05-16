@@ -14,6 +14,7 @@ export default class EchoScreen extends Component {
       url: null,
       urlInput: null,
     };
+    this.input = null;
   }
 
   initialHtml() {
@@ -39,6 +40,7 @@ export default class EchoScreen extends Component {
     return (
       <View style={styles.main}>
         <Input
+          ref={(input) => {this.input = input;}}
           autoCapitalize="none"
           autoCorrect={false}
           placeholder="https://appiumpro.com"
@@ -49,6 +51,11 @@ export default class EchoScreen extends Component {
           text="Go" style={styles.formControl}
           onPress={() => this.setState({url: urlInput})}
           {...testProps('navigateBtn')}
+        />
+        <Button
+          text="Clear" style={styles.formControl}
+          onPress={() => this.input.clear()}
+          {...testProps('clearBtn')}
         />
         <WebView style={styles.webview} source={source} />
       </View>
