@@ -24,6 +24,11 @@ let viewList = [
     desc: "Explore the possibilities of hybrid apps",
     screen: "Hybrid",
   },
+  {
+    name: "List Demo",
+    desc: "Scroll through a list of stuff",
+    screen: "List",
+  }
 ];
 
 if (Platform.OS === 'android') {

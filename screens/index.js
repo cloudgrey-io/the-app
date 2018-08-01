@@ -7,6 +7,7 @@ import SecretScreen from './SecretScreen';
 import VerifySMSScreen from './VerifySMSScreen';
 import ClipboardScreen from './ClipboardScreen';
 import HybridScreen from './HybridScreen';
+import ListScreen from './ListScreen';
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
@@ -17,4 +18,5 @@ export function registerScreens() {
   Navigation.registerComponent('io.cloudgrey.VerifySMSScreen', () => VerifySMSScreen);
   Navigation.registerComponent('io.cloudgrey.ClipboardScreen', () => ClipboardScreen);
   Navigation.registerComponent('io.cloudgrey.HybridScreen', () => HybridScreen);
+  Navigation.registerComponent('io.cloudgrey.ListScreen', () => ListScreen);
 }
