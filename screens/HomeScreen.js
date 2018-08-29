@@ -28,6 +28,11 @@ let viewList = [
     name: "List Demo",
     desc: "Scroll through a list of stuff",
     screen: "List",
+  },
+  {
+    name: "Photo Demo",
+    desc: "Some photos with no distinguishing IDs",
+    screen: "Photo",
   }
 ];
 
