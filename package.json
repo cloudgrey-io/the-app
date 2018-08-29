@@ -9,6 +9,8 @@
     "build-android-release": "cd android && ./gradlew clean assemble && ./sign-android-release-apk.sh",
     "show-ios-debug": "echo \"$(pwd)/ios/build/Build/Products/Debug-iphonesimulator/TheApp.app\"",
     "show-ios-release": "echo \"$(pwd)/ios/build/Build/Products/Release-iphonesimulator/TheApp.app\"",
+    "show-android-release": "echo \"$(pwd)/android/app/build/outputs/apk/app-release.apk\"",
+    "show-android-debug": "echo \"$(pwd)/android/app/build/outputs/apk/app-debug.apk\"",
     "test": "jest"
   },
   "dependencies": {
