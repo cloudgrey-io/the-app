@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     paddingTop: baseStyles.margin * 5,
   },
   formEl: {
+    height: 50,
     marginTop: baseStyles.margin * 2,
     width: "100%",
   },

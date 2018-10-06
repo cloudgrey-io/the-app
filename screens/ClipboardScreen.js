@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   formControl: {
     margin: baseStyles.margin,
-    height: 25,
+    height: 50,
     width: '100%',
   },
 });
