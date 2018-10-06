@@ -57,7 +57,10 @@ export default class EchoScreen extends Component {
           onPress={() => this.input.clear()}
           {...testProps('clearBtn')}
         />
-        <WebView style={styles.webview} source={source} />
+        <WebView
+         style={styles.webview}
+         source={source}
+        />
       </View>
     );
   }

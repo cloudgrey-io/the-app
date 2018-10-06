@@ -1,5 +1,7 @@
 package io.cloudgrey.the_app;
 
+import android.webkit.WebView;
+
 import com.centaurwarchief.smslistener.SmsListenerPackage;
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
@@ -8,6 +10,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends NavigationApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        WebView.setWebContentsDebuggingEnabled(true);
+    }
 
     @Override
     public boolean isDebug() {

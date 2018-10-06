@@ -119,10 +119,10 @@ android {
 
     defaultConfig {
         applicationId "io.cloudgrey.the_app"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 1
-        versionName "1.7.0"
+        versionName "1.7.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
