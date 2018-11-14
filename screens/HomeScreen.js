@@ -33,6 +33,11 @@ let viewList = [
     name: "Photo Demo",
     desc: "Some photos with no distinguishing IDs",
     screen: "Photo",
+  },
+  {
+    name: "Geolocation Demo",
+    desc: "Use the camera and the photo library",
+    screen: "Location",
   }
 ];
 
