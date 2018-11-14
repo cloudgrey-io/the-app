@@ -4,7 +4,7 @@ set -ex
 SDK_VER="27.0.3"
 TOOLS_DIR="$ANDROID_HOME/build-tools/$SDK_VER"
 KS="$HOME/.android/debug.keystore"
-APK_DIR="./app/build/outputs/apk"
+APK_DIR="./app/build/outputs/apk/release"
 UNSIGNED="app-release-unsigned.apk"
 ALIGNED="app-release-unsigned-aligned.apk"
 SIGNED="app-release.apk"

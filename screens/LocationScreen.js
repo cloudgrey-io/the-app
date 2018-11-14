@@ -62,9 +62,9 @@ export default class LocationScreen extends Component {
     const {lat, long, acc} = this.state;
     return (
       <View style={styles.main}>
-        <Text style={styles.message} {...testProps('latitude')}>Latitude: {lat}</Text>
-        <Text style={styles.message} {...testProps('longitude')}>Longitude: {long}</Text>
-        <Text style={styles.message} {...testProps('accuracy')}>Accuracy: {acc}</Text>
+        <Text style={styles.message}>Latitude: {lat}</Text>
+        <Text style={styles.message}>Longitude: {long}</Text>
+        <Text style={styles.message}>Accuracy: {acc}</Text>
       </View>
     );
   }
