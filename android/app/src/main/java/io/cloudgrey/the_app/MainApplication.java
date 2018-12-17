@@ -1,6 +1,7 @@
 package io.cloudgrey.the_app;
 
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.centaurwarchief.smslistener.SmsListenerPackage;
 import com.facebook.react.ReactPackage;
@@ -39,5 +40,10 @@ public class MainApplication extends NavigationApplication {
     @Override
     public String getJSMainModuleName() {
         return "index";
+    }
+
+    // this exists in order to be called from mobile: backdoor
+    public void raiseToast(){
+        Toast.makeText(this, "Hello from the back door!", Toast.LENGTH_LONG).show();
     }
 }
