@@ -43,7 +43,7 @@ public class MainApplication extends NavigationApplication {
     }
 
     // this exists in order to be called from mobile: backdoor
-    public void raiseToast(){
-        Toast.makeText(this, "Hello from the back door!", Toast.LENGTH_LONG).show();
+    public void raiseToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }
