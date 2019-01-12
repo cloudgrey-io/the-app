@@ -16,8 +16,8 @@
   "dependencies": {
     "bluebird": "^3.5.3",
     "lodash": "^4.17.10",
-    "react": "16.2.0",
-    "react-native": "0.53.2",
+    "react": "^16.6.3",
+    "react-native": "^0.57.8",
     "react-native-android-sms-listener": "^0.5.0",
     "react-native-camera": "^1.1.1",
     "react-native-elements": "^1.0.0-beta2",
