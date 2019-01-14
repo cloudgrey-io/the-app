@@ -157,6 +157,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-camera')
+    compile project(':react-native-android-sms-listener')
     implementation project(':react-native-android-sms-listener')
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
