@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Linking } from 'react-native';
-import { List, ListItem, } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import { testProps, login } from '../lib/utils';
 
 let viewList = [
@@ -87,7 +87,7 @@ export default class HomeScreen extends Component {
     return (
       <View>
         <Text style={styles.listHeader}>Choose An Awesome View</Text>
-        <List>
+        <View>
           {viewList.map((l, i) => (
             <ListItem
               key={i}
@@ -97,7 +97,7 @@ export default class HomeScreen extends Component {
               {...testProps(l.name)}
             />
           ))}
-        </List>
+        </View>
       </View>
     );
   }
