@@ -9,7 +9,6 @@ const OLD_ECHO_KEY = "@TheApp:savedEcho";
 
 export default class EchoScreen extends Component {
 
-
   constructor() {
     super();
     this.state = {savedEcho: null, curText: null};
