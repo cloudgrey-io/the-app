@@ -59,7 +59,7 @@ export default class EchoScreen extends Component {
             {...testProps('messageInput')}
           />
           <Button
-            text="Save" style={styles.formControl}
+            title="Save" style={styles.formControl}
             onPress={this.saveEcho.bind(this)}
             {...testProps('messageSaveBtn')}
           />
@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     height: '100%',
   },
   echoHeader: {

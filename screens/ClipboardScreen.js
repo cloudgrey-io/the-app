@@ -32,7 +32,7 @@ export default class ClipboardScreen extends Component {
         <View style={{...baseStyles.flexCenter}}>
           <Text style={styles.echoHeader}>Here&apos;s the clipboard text:</Text>
           <Text style={styles.savedEcho} testId="clipboardText" accessibilityLabel={clipboardText}>{clipboardText}</Text>
-          <Button {...testProps('refreshClipboardText')} text="Refresh Clipboard Text"
+          <Button {...testProps('refreshClipboardText')} title="Refresh Clipboard Text"
             onPress={this.refresh.bind(this)}
           />
         </View>
@@ -44,7 +44,7 @@ export default class ClipboardScreen extends Component {
             {...testProps('messageInput')}
           />
           <Button
-            text="Set Clipboard Text" style={styles.formControl}
+            title="Set Clipboard Text" style={styles.formControl}
             onPress={this.setText.bind(this)}
             {...testProps('setClipboardText')}
           />
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     height: '100%',
   },
   echoHeader: {

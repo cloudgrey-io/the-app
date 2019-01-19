@@ -1,8 +1,8 @@
 /* global alert */
 
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Alert } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
+import { View, Text, ScrollView, StyleSheet, Alert } from 'react-native';
+import { ListItem } from 'react-native-elements';
 import { testProps } from '../lib/utils';
 
 const CLOUD_TYPES = {
@@ -56,7 +56,7 @@ export default class ListScreen extends Component {
     return (
       <ScrollView>
         <Text style={styles.listHeader}>Check out these clouds</Text>
-        <List>
+        <View>
           {Object.keys(CLOUD_TYPES).map(cloudType => (
             <ListItem
               key={cloudType}
@@ -65,7 +65,7 @@ export default class ListScreen extends Component {
               {...testProps(cloudType)}
             />
           ))}
-        </List>
+        </View>
       </ScrollView>
     );
   }

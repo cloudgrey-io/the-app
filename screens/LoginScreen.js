@@ -5,6 +5,7 @@ import { View, StyleSheet, AsyncStorage } from 'react-native';
 import { Input, Button, Text } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps, USER_KEY, login } from '../lib/utils';
+import { Navigation } from 'react-native-navigation';
 
 export default class LoginScreen extends Component {
   constructor() {
@@ -17,18 +18,24 @@ export default class LoginScreen extends Component {
   }
 
   async componentDidMount() {
-    const {navigator} = this.props;
     // if we're already logged in, just go to the secret area already
     if (await AsyncStorage.getItem(USER_KEY)) {
-      navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+      Navigation.push(this.props.componentId, {
+        component: {
+          name: 'io.cloudgrey.SecretScreen',
+        }
+      });
     }
   }
 
   async login() {
-    const {navigator} = this.props;
     if (await login(this.state.username, this.state.password)) {
       this.setState({username: "", password: ""});
-      navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+      Navigation.push(this.props.componentId, {
+        component: {
+          name: 'io.cloudgrey.SecretScreen',
+        }
+      });
       return;
     }
 
@@ -52,7 +59,7 @@ export default class LoginScreen extends Component {
         value={password}
         {...testProps('password')}
       />
-      <Button text="Login" style={styles.button}
+      <Button title="Login" style={styles.button}
         onPress={this.login}
         {...testProps('loginBtn')}
       />
