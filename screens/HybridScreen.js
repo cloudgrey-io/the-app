@@ -48,12 +48,12 @@ export default class EchoScreen extends Component {
           {...testProps('urlInput')}
         />
         <Button
-          text="Go" style={styles.formControl}
+          title="Go" style={styles.formControl}
           onPress={() => this.setState({url: urlInput})}
           {...testProps('navigateBtn')}
         />
         <Button
-          text="Clear" style={styles.formControl}
+          title="Clear" style={styles.formControl}
           onPress={() => this.input.clear()}
           {...testProps('clearBtn')}
         />
@@ -76,8 +76,7 @@ const styles = StyleSheet.create({
   },
   formControl: {
     margin: baseStyles.margin,
-    width: '100%',
-    height: 25,
+    width: '100%'
   },
   webview: {
     height: 200,

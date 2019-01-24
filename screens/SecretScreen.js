@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps, getLoginUser, logout } from '../lib/utils';
+import { Navigation } from 'react-native-navigation';
 
 export default class SecretScreen extends Component {
   constructor() {
@@ -16,7 +17,11 @@ export default class SecretScreen extends Component {
   async componentDidMount() {
     const user = await getLoginUser();
     if (!user) {
-      this.props.navigator.push({screen: 'io.cloudgrey.LoginScreen'});
+      Navigation.push(this.props.componentId, {
+        component: {
+          name: 'io.cloudgrey.LoginScreen',
+        }
+      });
     }
 
     this.setState({
@@ -25,9 +30,12 @@ export default class SecretScreen extends Component {
   }
 
   async logout() {
-    const {navigator} = this.props;
     await logout();
-    navigator.push({screen: 'io.cloudgrey.LoginScreen'});
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'io.cloudgrey.LoginScreen',
+      }
+    });
   }
 
   render() {
@@ -35,7 +43,7 @@ export default class SecretScreen extends Component {
     return <View style={styles.view}>
       <Text h2>Secret Area</Text>
       <Text style={styles.message}>You are logged in as <Text style={styles.username} {...testProps(`Logged in as ${user}`)}>{user}</Text></Text>
-      <Button text="Logout" style={styles.button}
+      <Button title="Logout" style={styles.button}
         onPress={this.logout} />
     </View>;
   }

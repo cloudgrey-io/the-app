@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Linking } from 'react-native';
-import { List, ListItem, } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import { testProps, login } from '../lib/utils';
+import { Navigation } from 'react-native-navigation';
 
 let viewList = [
   {
@@ -75,29 +76,40 @@ export default class HomeScreen extends Component {
     if (handler === "login") {
       const loggedIn = await login(parts[0], parts[1]);
       if (loggedIn) {
-        this.props.navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+        Navigation.push(this.props.componentId, {
+          component: {
+            name: 'io.cloudgrey.SecretScreen',
+          }
+        });
       } else {
-        this.props.navigator.push({screen: 'io.cloudgrey.SecretScreen'});
+        Navigation.push(this.props.componentId, {
+          component: {
+            name: 'io.cloudgrey.SecretScreen',
+          }
+        });
       }
     }
   }
 
   render() {
-    const {navigator} = this.props;
     return (
       <View>
         <Text style={styles.listHeader}>Choose An Awesome View</Text>
-        <List>
+        <View>
           {viewList.map((l, i) => (
             <ListItem
               key={i}
               title={l.name}
               subtitle={l.desc}
-              onPress={() => navigator.push({screen: `io.cloudgrey.${l.screen}Screen`})}
+              onPress={() => Navigation.push(this.props.componentId, {
+                component: {
+                  name: `io.cloudgrey.${l.screen}Screen`,
+                }
+              })}
               {...testProps(l.name)}
             />
           ))}
-        </List>
+        </View>
       </View>
     );
   }
@@ -106,7 +118,6 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   listHeader: {
     padding: 8,
-    fontSize: 14,
-    marginBottom: -20,
+    fontSize: 14
   },
 });
