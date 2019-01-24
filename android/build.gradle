@@ -2,6 +2,7 @@
 
 buildscript {
     ext {
+        buildToolsVersion = "27.0.3"
         minSdkVersion = 19
         compileSdkVersion = 27
         targetSdkVersion = 26
@@ -28,7 +29,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-        google()
+        maven { url "$rootDir/../node_modules/react-native/android" }
     }
 }
 

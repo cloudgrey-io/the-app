@@ -4,6 +4,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.centaurwarchief.smslistener.SmsListenerPackage;
+import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 
 import com.reactnativenavigation.NavigationApplication;
@@ -49,11 +50,6 @@ public class MainApplication extends NavigationApplication {
     @Override
     public List<ReactPackage> createAdditionalReactPackages() {
         return getPackages();
-    }
-
-    @Override
-    public String getJSMainModuleName() {
-        return "index";
     }
 
     // this exists in order to be called from mobile: backdoor
