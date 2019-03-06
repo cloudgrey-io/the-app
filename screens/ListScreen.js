@@ -1,5 +1,3 @@
-/* global alert */
-
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet, Alert } from 'react-native';
 import { List, ListItem } from 'react-native-elements';

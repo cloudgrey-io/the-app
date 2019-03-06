@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import B from 'bluebird';
 import { Platform, View, Text, StyleSheet, PermissionsAndroid } from 'react-native';
-import { testProps } from '../lib/utils';
 
 async function requestLocationPermission() {
   if (Platform.OS === "android") {

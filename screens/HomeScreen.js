@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Linking } from 'react-native';
+import { ScrollView, Platform, StyleSheet, Text, Linking } from 'react-native';
 import { List, ListItem, } from 'react-native-elements';
 import { testProps, login } from '../lib/utils';
 
@@ -38,7 +38,12 @@ let viewList = [
     name: "Geolocation Demo",
     desc: "Use the camera and the photo library",
     screen: "Location",
-  }
+  },
+  {
+    name: "Picker Demo",
+    desc: "Use some picker wheels for fun and profit",
+    screen: "Picker",
+  },
 ];
 
 if (Platform.OS === 'android') {
@@ -85,7 +90,7 @@ export default class HomeScreen extends Component {
   render() {
     const {navigator} = this.props;
     return (
-      <View>
+      <ScrollView>
         <Text style={styles.listHeader}>Choose An Awesome View</Text>
         <List>
           {viewList.map((l, i) => (
@@ -98,7 +103,7 @@ export default class HomeScreen extends Component {
             />
           ))}
         </List>
-      </View>
+      </ScrollView>
     );
   }
 }

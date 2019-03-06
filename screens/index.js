@@ -10,6 +10,7 @@ import HybridScreen from './HybridScreen';
 import ListScreen from './ListScreen';
 import PhotoScreen from './PhotoScreen';
 import LocationScreen from './LocationScreen';
+import PickerScreen from './PickerScreen';
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
@@ -23,4 +24,5 @@ export function registerScreens() {
   Navigation.registerComponent('io.cloudgrey.ListScreen', () => ListScreen);
   Navigation.registerComponent('io.cloudgrey.PhotoScreen', () => PhotoScreen);
   Navigation.registerComponent('io.cloudgrey.LocationScreen', () => LocationScreen);
+  Navigation.registerComponent('io.cloudgrey.PickerScreen', () => PickerScreen);
 }
