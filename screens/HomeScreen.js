@@ -25,6 +25,11 @@ let viewList = [
     screen: "Hybrid",
   },
   {
+    name: "Dual Webview Demo",
+    desc: "Automate apps with multiple webviews",
+    screen: "Hybrid2",
+  },
+  {
     name: "List Demo",
     desc: "Scroll through a list of stuff",
     screen: "List",

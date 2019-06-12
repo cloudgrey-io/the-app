@@ -6,7 +6,7 @@ import { Input, Button } from 'react-native-elements';
 import baseStyles from '../styles/base';
 import { testProps } from '../lib/utils';
 
-export default class EchoScreen extends Component {
+export default class HybridScreen extends Component {
 
   constructor() {
     super();
