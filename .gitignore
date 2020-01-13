@@ -54,3 +54,8 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 package-lock.json
+.ccls-cache
+.vim
+.project
+.settings
+.classpath
