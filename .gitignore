@@ -59,3 +59,4 @@ package-lock.json
 .project
 .settings
 .classpath
+ios/Pods
